@@ -1,0 +1,19 @@
+@(variable: Form[Application.Adder])
+
+@import helper._
+
+@main("Post It"){
+
+<h1>Add a blog post</h1>
+
+@form(action = routes.Application.adding, args =  'id -> "variable") {
+
+		@inputText(
+			field = variable("Text")
+		)
+		
+		<p class="button btn-default"><input type="submit"></p>
+
+	}
+
+}

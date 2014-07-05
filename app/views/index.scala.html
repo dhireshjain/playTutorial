@@ -1,0 +1,30 @@
+@(blogs: List[Blog], flag : Boolean) 
+
+@main("Blogs") {
+
+<div  class=" row navbar-form pull-center" style="text-align:center">
+<form class="col-lg-11">
+	<input class="span2" type="text" placeholder="Email"> <input
+		class="span2" type="password" placeholder="Password">
+	<button type="submit" class="btn">Sign in</button>
+</form>
+@if(flag){
+<button type ="button" class="btn-primary col-lg-.75">Add</button>
+}
+</div>
+
+<br>
+<div class="row dropdown-header" style="text-align:center">
+	<h1 style="text-align:center font-size: 50px">Hello Blog</h1>
+</div>
+</br>
+<!-- Example row of columns -->
+<div class="row">
+	@for(blog <- blogs) {
+	<div class="jumbotron">
+		<h3 class="row">@blog.header</h3>
+		<p style="font-size: 22px">@blog.text</p>
+	</div>
+	}
+</div>
+}
