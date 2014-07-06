@@ -20,7 +20,7 @@ public class Blog extends Model {
 	@Constraints.Required
 	@Column(columnDefinition="TEXT")
 	public String text;
-
+		
 
 
 	public static Model.Finder<Long, Blog> find = new Model.Finder<Long, Blog>(

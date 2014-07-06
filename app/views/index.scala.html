@@ -1,30 +1,36 @@
-@(blogs: List[Blog], flag : Boolean) 
+@(blogs: List[Blog], log : Form[Application.logInCredentials]) 
+
+@import helper._
 
 @main("Blogs") {
 
-<div  class=" row navbar-form pull-center" style="text-align:center">
-<form class="col-lg-11">
-	<input class="span2" type="text" placeholder="Email"> <input
-		class="span2" type="password" placeholder="Password">
-	<button type="submit" class="btn">Sign in</button>
+
+<div  class="row navbar-collapse collapse pull-right" style="text-align:center">
+<form class="col-lg-11" method="post" action="@routes.Application.check">
+<ul class="nav navbar-nav">
+<li><input type="text" name="username" placeholder="username"/></li>
+<li></br></br></li>
+<li><input type="password" name="password" placeholder="password" /></li>
+<li></br></br></li>
+<li><input class = "btn-success"type="submit" value="Login" /><li/></br></br>
+</ul>  
 </form>
-@if(flag){
-<button type ="button" class="btn-primary col-lg-.75">Add</button>
-}
+
 </div>
 
-<br>
-<div class="row dropdown-header" style="text-align:center">
-	<h1 style="text-align:center font-size: 50px">Hello Blog</h1>
+</br></br></br>
+<div class="row" style="text-align:center">
+	<h1 class="jumbotron" style="background-color: #D23F20 text-align:center font-size: 50px">Hello Blog</h1>
 </div>
 </br>
 <!-- Example row of columns -->
 <div class="row">
 	@for(blog <- blogs) {
 	<div class="jumbotron">
-		<h3 class="row">@blog.header</h3>
+		<h2 class="row">@blog.header</h2>
 		<p style="font-size: 22px">@blog.text</p>
 	</div>
 	}
 </div>
 }
+

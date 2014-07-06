@@ -1,0 +1,38 @@
+@(blogs: List[Blog]) 
+
+@import helper._
+
+@main("Blogs") {
+
+
+<div class = "container">
+<div class="navbar-header pull-right">
+<a href="@routes.Application.logOut">
+<p class="btn-primary btn-warning icon-ok">Log Out</p>
+</a>
+
+
+</div>
+</div>
+
+<div class="row dropdown-header" style="text-align:center">
+	<h1 style="text-align:center font-size: 50px">Hello Blog</h1>
+</div>
+</br>
+<!-- Example row of columns -->
+<div class="row">
+	@for(blog <- blogs) {
+	<div class="jumbotron">
+		<h2 class="row">@blog.header</h2>
+		<p style="font-size: 22px">@blog.text</p>
+	</div>
+	}
+</div>
+
+<a href="@routes.Application.add">
+<button class="btn-success" style="width:10em">Add</button>
+</a>
+
+
+}
+

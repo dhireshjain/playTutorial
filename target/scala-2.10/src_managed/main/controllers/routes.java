@@ -1,6 +1,6 @@
 // @SOURCE:/home/dhiresh/blog/conf/routes
-// @HASH:f930b787309cab6b33e95bc9a8d26bcb74afb8da
-// @DATE:Sat Jul 05 20:48:26 IST 2014
+// @HASH:a818477e42829e56be8a1a46d1a8dcb792d5ac43
+// @DATE:Sun Jul 06 19:11:50 IST 2014
 
 package controllers;
 

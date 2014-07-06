@@ -5,9 +5,17 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+POST	/			    controllers.Application.check()
+
+#Blog page
+
+GET	/admin			    controllers.Application.loggedIn()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 GET	/add			    controllers.Application.add()
 
-GET	/adding			    controllers.Application.adding()
+POST	/add			    controllers.Application.adding()
+
+GET	/logOut			    controllers.Application.logOut()

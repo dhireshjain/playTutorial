@@ -34,17 +34,31 @@ Seq[Any](format.raw/*1.37*/("""
 
 <h1>Add a blog post</h1>
 
-"""),_display_(Seq[Any](/*9.2*/form(action = routes.Application.adding, args =  'id -> "variable")/*9.69*/ {_display_(Seq[Any](format.raw/*9.71*/("""
 
-		"""),_display_(Seq[Any](/*11.4*/inputText(
+<form class="col-lg-11" method="POST" action=""""),_display_(Seq[Any](/*10.48*/routes/*10.54*/.Application.adding)),format.raw/*10.73*/("""">
+
+<input class="textarea1" type="text2" role="textbox" contenteditable="true" data-role="editable" name="text"></p>
+
+<p class="button btn-default"><input type="submit"></p>
+</form>
+
+<!--
+"""),_display_(Seq[Any](/*18.2*/form(action = routes.Application.adding, args =  'id -> "variable")/*18.69*/ {_display_(Seq[Any](format.raw/*18.71*/("""
+
+		"""),_display_(Seq[Any](/*20.4*/inputText(
 			field = variable("Text")
-		))),format.raw/*13.4*/("""
+		))),format.raw/*22.4*/("""
 		
 		<p class="button btn-default"><input type="submit"></p>
 
-	""")))})),format.raw/*17.3*/("""
+	""")))})),format.raw/*26.3*/("""
 
-""")))})),format.raw/*19.2*/("""
+!-->
+
+""")))})),format.raw/*30.2*/("""
+
+
+
 """))}
     }
     
@@ -57,11 +71,11 @@ Seq[Any](format.raw/*1.37*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jul 05 21:23:39 IST 2014
+                    DATE: Sun Jul 06 19:11:50 IST 2014
                     SOURCE: /home/dhiresh/blog/app/views/add.scala.html
-                    HASH: 880f288337e36bff0779b57a169c737a167d1837
-                    MATRIX: 789->1|934->36|962->55|998->57|1021->72|1059->73|1122->102|1197->169|1236->171|1276->176|1339->218|1435->283|1469->286
-                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|37->9|37->9|37->9|39->11|41->13|45->17|47->19
+                    HASH: c623c118973e40fb2e35e735cba58788666d0e4b
+                    MATRIX: 789->1|934->36|962->55|998->57|1021->72|1059->73|1171->149|1186->155|1227->174|1452->364|1528->431|1568->433|1608->438|1671->480|1767->545|1807->554
+                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|38->10|38->10|38->10|46->18|46->18|46->18|48->20|50->22|54->26|58->30
                     -- GENERATED --
                 */
             
