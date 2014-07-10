@@ -21,12 +21,17 @@
 </br>
 <!-- Example row of columns -->
 <div class="row">
+	<div class="col-lg-8">
 	@for(blog <- blogs) {
 	<div class="jumbotron">
 		<h2 class="row">@blog.header</h2>
+		<h6 style="color:RED">Time: @blog.time Author: @blog.author</h6>
 		<p style="font-size: 22px">@blog.text</p>
-	</div>
+	</div>	
 	}
+	</div>
+	<div class="col-lg-4">
+	</div>
 </div>
 
 <a href="@routes.Application.add">

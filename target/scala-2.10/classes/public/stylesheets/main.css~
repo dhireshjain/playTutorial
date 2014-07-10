@@ -121,7 +121,7 @@ display: block;
 padding: 6px 10px 8px;
 margin: 0;
 width: 100%;
-min-height: 90px;
+
 line-height: 1.4;
 font-size: 15px;
 font-family: "Helvetica Neue",helvetica,arial,sans-serif;
@@ -4560,7 +4560,7 @@ a.list-group-item.active > .badge,
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #;
+  background-color: #eee;
 }
 .jumbotron h1,
 .jumbotron .h1 {

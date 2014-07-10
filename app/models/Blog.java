@@ -20,8 +20,9 @@ public class Blog extends Model {
 	@Constraints.Required
 	@Column(columnDefinition="TEXT")
 	public String text;
-		
 
+	public String time;		
+	public String author;
 
 	public static Model.Finder<Long, Blog> find = new Model.Finder<Long, Blog>(
 			Long.class, Blog.class);

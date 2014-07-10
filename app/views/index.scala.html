@@ -1,4 +1,4 @@
-@(blogs: List[Blog], log : Form[Application.logInCredentials]) 
+@(blogs: List[Blog], log : Form[Application.logInCredentials], users: List[Users]) 
 
 @import helper._
 
@@ -20,17 +20,27 @@
 
 </br></br></br>
 <div class="row" style="text-align:center">
-	<h1 class="jumbotron" style="background-color: #D23F20 text-align:center font-size: 50px">Hello Blog</h1>
+	<h1 class="jumbotron" style="background-color: GREY; text-align:center font-size: 50px">Hello Blog</h1>
 </div>
 </br>
 <!-- Example row of columns -->
+
 <div class="row">
+	
+</div>	
+
+<div class="row" >
+	<div class="col-lg-8">
 	@for(blog <- blogs) {
 	<div class="jumbotron">
-		<h2 class="row">@blog.header</h2>
-		<p style="font-size: 22px">@blog.text</p>
+		<h2 style="color: GREY">@blog.header</h2>
+		<h6 style="color:RED">Time: @blog.time Author: @blog.author</h6>
+		<blockquote style="font-size: 22px ; color: #2929A6 word-wrap: break-word">@blog.text</blockquote>
 	</div>
 	}
+	</div>
+	<div class="col-lg-4">
+	</div>
 </div>
 }
 

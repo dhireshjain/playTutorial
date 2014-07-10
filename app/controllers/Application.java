@@ -6,6 +6,10 @@ import play.mvc.*;
 import java.util.*;
 import views.html.*;
 import models.*;
+import play.mvc.Http.Context;
+import play.api.mvc.DiscardingCookie;
+
+import com.avaje.ebean.*;
 
 import static play.data.Form.*;
 import play.data.validation.Constraints.*;
@@ -16,29 +20,32 @@ import views.html.*;
 public class Application extends Controller {
 
 	static int count = 0 ;
-
- public static class Adder {
+	
+ 	public static class Adder {
         @Required 
         public String text;
        
     } 
     
-     public static class logInCredentials {
+    	 public static class logInCredentials {
         @Required 
         public String username;
 	public String password;
     } 
 
-
     public static Result index() {
     
-    	
+    	    	
     	List<Blog> blogs = Blog.getAllBlogs();
     	
-       	return ok(views.html.index.render(blogs,form(logInCredentials.class)));	
+    	List<Users> users = Users.getAllUsers();
+    	
+	
+       	return ok(views.html.index.render(blogs,form(logInCredentials.class),users));	
        	
     }
     
+    @Security.Authenticated(Secure.class)
      public static Result loggedIn() {
     
     	
@@ -48,40 +55,36 @@ public class Application extends Controller {
        	
     }
     
-    
      public static Result check() {
-    	
-    	try
-    	{	
+   	try{
     		Form<logInCredentials> form = form(logInCredentials.class).bindFromRequest();
     		
     		logInCredentials logging =  form.get();
-    		if(logging.username.compareTo("admin") == 0 && logging.password.compareTo("admin") == 0)
-    		{	
-    			session("email", form.get().username);
-    			System.out.println(form.get().username+form.get().password);
+    		
+    		Users user = Users.find.where().eq("username", logging.username).findUnique();
+    		   		
+    		if(user != null && user.password.compareTo(logging.password) == 0)
+    		{	    	session("username", logging.username);
+    					
     			return redirect(controllers.routes.Application.loggedIn());
     		}
-   
-    	}
-    	catch(Exception e)
-    	{	
-    	 	
-    	}
-    	
-  	
+   	   }
+   	catch(Exception e)
+   	{
+   	}	   
        return redirect(controllers.routes.Application.index());
        	
     }
-
+	@Security.Authenticated(Secure.class)
 	public static Result add() {
-    	
+    		
     	return ok(
             views.html.add.render(form(Adder.class))	// Submitting a form
         );
     	
     }
     
+    @Security.Authenticated(Secure.class)
      public static Result adding() {
      	
     	Form<Adder> form = form(Adder.class).bindFromRequest();
@@ -92,20 +95,22 @@ public class Application extends Controller {
         } 
         else 
         {
+        
         	count++;
             	Adder data = form.get();
            	Blog blog = new Blog();
 		blog.header = "Blog Post "+count;
 		blog.text = data.text;
+		blog.time = new time().getTime();
+		blog.author = request().username();
 		blog.save();
             
              return redirect(controllers.routes.Application.loggedIn());
          }
     }
-    
     public static Result logOut()
     {
-
+	 session().clear();
    	 return redirect(controllers.routes.Application.index());
     }
     
