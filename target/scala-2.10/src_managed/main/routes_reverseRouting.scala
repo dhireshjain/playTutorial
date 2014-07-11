@@ -1,6 +1,6 @@
 // @SOURCE:/home/dhiresh/blog/conf/routes
-// @HASH:a818477e42829e56be8a1a46d1a8dcb792d5ac43
-// @DATE:Sun Jul 06 19:11:50 IST 2014
+// @HASH:f5ac3470778f040d8310b2863d1909753732210a
+// @DATE:Fri Jul 11 20:33:21 IST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,6 +13,8 @@ import play.libs.F
 import Router.queryString
 
 
+// @LINE:25
+// @LINE:23
 // @LINE:21
 // @LINE:19
 // @LINE:17
@@ -35,6 +37,8 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:25
+// @LINE:23
 // @LINE:21
 // @LINE:19
 // @LINE:17
@@ -56,6 +60,12 @@ def adding(): Call = {
 }
                                                 
 
+// @LINE:23
+def signup(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "signup")
+}
+                                                
+
 // @LINE:17
 def add(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "add")
@@ -74,6 +84,12 @@ def logOut(): Call = {
 }
                                                 
 
+// @LINE:25
+def authenticate(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "signup")
+}
+                                                
+
 // @LINE:6
 def index(): Call = {
    Call("GET", _prefix)
@@ -86,6 +102,8 @@ def index(): Call = {
                   
 
 
+// @LINE:25
+// @LINE:23
 // @LINE:21
 // @LINE:19
 // @LINE:17
@@ -113,6 +131,8 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:25
+// @LINE:23
 // @LINE:21
 // @LINE:19
 // @LINE:17
@@ -139,6 +159,17 @@ def adding : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "add"})
+      }
+   """
+)
+                        
+
+// @LINE:23
+def signup : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.signup",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
       }
    """
 )
@@ -177,6 +208,17 @@ def logOut : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
+// @LINE:25
+def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.authenticate",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
+      }
+   """
+)
+                        
+
 // @LINE:6
 def index : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.index",
@@ -194,6 +236,8 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:25
+// @LINE:23
 // @LINE:21
 // @LINE:19
 // @LINE:17
@@ -217,6 +261,8 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:25
+// @LINE:23
 // @LINE:21
 // @LINE:19
 // @LINE:17
@@ -238,6 +284,12 @@ def adding(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
+// @LINE:23
+def signup(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.signup(), HandlerDef(this, "controllers.Application", "signup", Seq(), "GET", """""", _prefix + """signup""")
+)
+                      
+
 // @LINE:17
 def add(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.add(), HandlerDef(this, "controllers.Application", "add", Seq(), "GET", """""", _prefix + """add""")
@@ -253,6 +305,12 @@ def loggedIn(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:21
 def logOut(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.logOut(), HandlerDef(this, "controllers.Application", "logOut", Seq(), "GET", """""", _prefix + """logOut""")
+)
+                      
+
+// @LINE:25
+def authenticate(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.authenticate(), HandlerDef(this, "controllers.Application", "authenticate", Seq(), "POST", """""", _prefix + """signup""")
 )
                       
 

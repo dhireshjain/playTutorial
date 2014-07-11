@@ -17,7 +17,11 @@
 </form>
 
 </div>
-
+@if(flash.contains("success")) {
+    <p class="success text-center" style="color:GREEN">
+        @flash.get("success")
+    </p>
+}
 </br></br></br>
 <div class="row" style="text-align:center">
 	<h1 class="jumbotron" style="background-color: GREY; text-align:center font-size: 50px">Hello Blog</h1>

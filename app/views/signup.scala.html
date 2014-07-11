@@ -1,0 +1,27 @@
+@(form: Form[Application.Signup])
+
+
+@main("SignUp") {
+<html>
+<body style="background-color:#BBBBBB;">
+@helper.form(routes.Application.authenticate) {
+<div class="row" style = "vertical-align:center;">
+   <h1 class="text-center">Sign Up</h1>
+   <div class="text-center">
+   <p>
+       <input type="text" name="username" placeholder="Email" value="@form("email").value">
+   </p>
+   <p>
+       <input type="password" name="password" placeholder="Password">
+   </p>
+   <p>
+  	
+       <button class="btn btn-md btn-primary"  type="submit">Signup</button>
+   </p>
+   </div>
+   </div>
+}
+
+</body>
+</html>
+}

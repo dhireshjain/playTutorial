@@ -32,6 +32,13 @@ public class Application extends Controller {
         public String username;
 	public String password;
     } 
+    
+    public static class Signup {
+
+    public String username;
+    public String password;
+
+    }
 
     public static Result index() {
     
@@ -108,6 +115,24 @@ public class Application extends Controller {
              return redirect(controllers.routes.Application.loggedIn());
          }
     }
+    
+    public static Result signup() {
+        return ok(
+            views.html.signup.render(form(Signup.class))
+        );
+    }
+    
+    public static Result authenticate() {
+    Form<Signup> signupForm = form(Signup.class).bindFromRequest();
+    Users user = new Users();
+    user.username = signupForm.get().username;
+    user.password = signupForm.get().password;
+    user.save();
+    session().clear();
+    flash("success", "Profile Created!");
+   return redirect(controllers.routes.Application.index());
+}
+    
     public static Result logOut()
     {
 	 session().clear();

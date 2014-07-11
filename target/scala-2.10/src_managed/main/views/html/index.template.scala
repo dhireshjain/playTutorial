@@ -45,7 +45,11 @@ Seq[Any](format.raw/*1.83*/("""
 </form>
 
 </div>
-
+"""),_display_(Seq[Any](/*20.2*/if(flash.contains("success"))/*20.31*/ {_display_(Seq[Any](format.raw/*20.33*/("""
+    <p class="success text-center" style="color:GREEN">
+        """),_display_(Seq[Any](/*22.10*/flash/*22.15*/.get("success"))),format.raw/*22.30*/("""
+    </p>
+""")))})),format.raw/*24.2*/("""
 </br></br></br>
 <div class="row" style="text-align:center">
 	<h1 class="jumbotron" style="background-color: GREY; text-align:center font-size: 50px">Hello Blog</h1>
@@ -59,18 +63,18 @@ Seq[Any](format.raw/*1.83*/("""
 
 <div class="row" >
 	<div class="col-lg-8">
-	"""),_display_(Seq[Any](/*34.3*/for(blog <- blogs) yield /*34.21*/ {_display_(Seq[Any](format.raw/*34.23*/("""
+	"""),_display_(Seq[Any](/*38.3*/for(blog <- blogs) yield /*38.21*/ {_display_(Seq[Any](format.raw/*38.23*/("""
 	<div class="jumbotron">
-		<h2 style="color: GREY">"""),_display_(Seq[Any](/*36.28*/blog/*36.32*/.header)),format.raw/*36.39*/("""</h2>
-		<h6 style="color:RED">Time: """),_display_(Seq[Any](/*37.32*/blog/*37.36*/.time)),format.raw/*37.41*/(""" Author: """),_display_(Seq[Any](/*37.51*/blog/*37.55*/.author)),format.raw/*37.62*/("""</h6>
-		<blockquote style="font-size: 22px ; color: #2929A6 word-wrap: break-word">"""),_display_(Seq[Any](/*38.79*/blog/*38.83*/.text)),format.raw/*38.88*/("""</blockquote>
+		<h2 style="color: GREY">"""),_display_(Seq[Any](/*40.28*/blog/*40.32*/.header)),format.raw/*40.39*/("""</h2>
+		<h6 style="color:RED">Time: """),_display_(Seq[Any](/*41.32*/blog/*41.36*/.time)),format.raw/*41.41*/(""" Author: """),_display_(Seq[Any](/*41.51*/blog/*41.55*/.author)),format.raw/*41.62*/("""</h6>
+		<blockquote style="font-size: 22px ; color: #2929A6 word-wrap: break-word">"""),_display_(Seq[Any](/*42.79*/blog/*42.83*/.text)),format.raw/*42.88*/("""</blockquote>
 	</div>
-	""")))})),format.raw/*40.3*/("""
+	""")))})),format.raw/*44.3*/("""
 	</div>
 	<div class="col-lg-4">
 	</div>
 </div>
-""")))})),format.raw/*45.2*/("""
+""")))})),format.raw/*49.2*/("""
 
 """))}
     }
@@ -84,11 +88,11 @@ Seq[Any](format.raw/*1.83*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jul 10 22:37:26 IST 2014
+                    DATE: Sat Jul 12 00:11:39 IST 2014
                     SOURCE: /home/dhiresh/blog/app/views/index.scala.html
-                    HASH: e70e8a19d6fc16f2fc1a0485dfabb21b10de322d
-                    MATRIX: 825->1|1016->82|1045->102|1081->104|1102->117|1141->119|1307->250|1321->256|1360->274|1997->876|2031->894|2071->896|2160->949|2173->953|2202->960|2275->997|2288->1001|2315->1006|2361->1016|2374->1020|2403->1027|2523->1111|2536->1115|2563->1120|2618->1144|2698->1193
-                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|37->9|37->9|37->9|62->34|62->34|62->34|64->36|64->36|64->36|65->37|65->37|65->37|65->37|65->37|65->37|66->38|66->38|66->38|68->40|73->45
+                    HASH: b9785dda0db66c4ca4af822c8957edbc1f435764
+                    MATRIX: 825->1|1016->82|1045->102|1081->104|1102->117|1141->119|1307->250|1321->256|1360->274|1712->591|1750->620|1790->622|1892->688|1906->693|1943->708|1985->719|2306->1005|2340->1023|2380->1025|2469->1078|2482->1082|2511->1089|2584->1126|2597->1130|2624->1135|2670->1145|2683->1149|2712->1156|2832->1240|2845->1244|2872->1249|2927->1273|3007->1322
+                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|37->9|37->9|37->9|48->20|48->20|48->20|50->22|50->22|50->22|52->24|66->38|66->38|66->38|68->40|68->40|68->40|69->41|69->41|69->41|69->41|69->41|69->41|70->42|70->42|70->42|72->44|77->49
                     -- GENERATED --
                 */
             

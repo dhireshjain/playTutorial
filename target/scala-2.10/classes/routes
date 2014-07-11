@@ -19,3 +19,7 @@ GET	/add			    controllers.Application.add()
 POST	/add			    controllers.Application.adding()
 
 GET	/logOut			    controllers.Application.logOut()
+
+GET     /signup                     controllers.Application.signup()
+
+POST    /signup                     controllers.Application.authenticate()
