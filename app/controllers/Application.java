@@ -124,6 +124,19 @@ public class Application extends Controller {
     
     public static Result authenticate() {
     Form<Signup> signupForm = form(Signup.class).bindFromRequest();
+    
+    if(signupForm.get().username.length()==0 || signupForm.get().password.length()==0)
+    {
+    	 flash("success", "Field cannot be empty");
+    	 return redirect(controllers.routes.Application.signup());
+    }
+    
+    if(Users.duplicate(signupForm.get().username))
+     {
+    	 flash("success", "Profile already exists");
+    	 return redirect(controllers.routes.Application.signup());
+    }
+    
     Users user = new Users();
     user.username = signupForm.get().username;
     user.password = signupForm.get().password;

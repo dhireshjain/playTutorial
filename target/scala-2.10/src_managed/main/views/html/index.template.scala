@@ -33,8 +33,14 @@ Seq[Any](format.raw/*1.83*/("""
 """),_display_(Seq[Any](/*5.2*/main("Blogs")/*5.15*/ {_display_(Seq[Any](format.raw/*5.17*/("""
 
 
-<div  class="row navbar-collapse collapse pull-right" style="text-align:center">
-<form class="col-lg-11" method="post" action=""""),_display_(Seq[Any](/*9.48*/routes/*9.54*/.Application.check)),format.raw/*9.72*/("""">
+<div  class="row navbar-collapse collapse">
+<div class= "pull-left" style="text-align:center">
+<form  action=""""),_display_(Seq[Any](/*10.17*/routes/*10.23*/.Application.signup)),format.raw/*10.42*/("""">
+<button class="btn-primary" action = "http:://www.google.com">Sign Up</button>
+</form>
+</div>
+<div class= "pull-right" style="text-align:center">
+<form class="col-lg-11" method="post" action=""""),_display_(Seq[Any](/*15.48*/routes/*15.54*/.Application.check)),format.raw/*15.72*/("""">
 <ul class="nav navbar-nav">
 <li><input type="text" name="username" placeholder="username"/></li>
 <li></br></br></li>
@@ -43,13 +49,13 @@ Seq[Any](format.raw/*1.83*/("""
 <li><input class = "btn-success"type="submit" value="Login" /><li/></br></br>
 </ul>  
 </form>
-
 </div>
-"""),_display_(Seq[Any](/*20.2*/if(flash.contains("success"))/*20.31*/ {_display_(Seq[Any](format.raw/*20.33*/("""
+</div>
+"""),_display_(Seq[Any](/*26.2*/if(flash.contains("success"))/*26.31*/ {_display_(Seq[Any](format.raw/*26.33*/("""
     <p class="success text-center" style="color:GREEN">
-        """),_display_(Seq[Any](/*22.10*/flash/*22.15*/.get("success"))),format.raw/*22.30*/("""
+        """),_display_(Seq[Any](/*28.10*/flash/*28.15*/.get("success"))),format.raw/*28.30*/("""
     </p>
-""")))})),format.raw/*24.2*/("""
+""")))})),format.raw/*30.2*/("""
 </br></br></br>
 <div class="row" style="text-align:center">
 	<h1 class="jumbotron" style="background-color: GREY; text-align:center font-size: 50px">Hello Blog</h1>
@@ -63,18 +69,18 @@ Seq[Any](format.raw/*1.83*/("""
 
 <div class="row" >
 	<div class="col-lg-8">
-	"""),_display_(Seq[Any](/*38.3*/for(blog <- blogs) yield /*38.21*/ {_display_(Seq[Any](format.raw/*38.23*/("""
+	"""),_display_(Seq[Any](/*44.3*/for(blog <- blogs) yield /*44.21*/ {_display_(Seq[Any](format.raw/*44.23*/("""
 	<div class="jumbotron">
-		<h2 style="color: GREY">"""),_display_(Seq[Any](/*40.28*/blog/*40.32*/.header)),format.raw/*40.39*/("""</h2>
-		<h6 style="color:RED">Time: """),_display_(Seq[Any](/*41.32*/blog/*41.36*/.time)),format.raw/*41.41*/(""" Author: """),_display_(Seq[Any](/*41.51*/blog/*41.55*/.author)),format.raw/*41.62*/("""</h6>
-		<blockquote style="font-size: 22px ; color: #2929A6 word-wrap: break-word">"""),_display_(Seq[Any](/*42.79*/blog/*42.83*/.text)),format.raw/*42.88*/("""</blockquote>
+		<h2 style="color: GREY">"""),_display_(Seq[Any](/*46.28*/blog/*46.32*/.header)),format.raw/*46.39*/("""</h2>
+		<h6 style="color:RED">Time: """),_display_(Seq[Any](/*47.32*/blog/*47.36*/.time)),format.raw/*47.41*/(""" Author: """),_display_(Seq[Any](/*47.51*/blog/*47.55*/.author)),format.raw/*47.62*/("""</h6>
+		<blockquote style="font-size: 22px ; color: #2929A6 word-wrap: break-word">"""),_display_(Seq[Any](/*48.79*/blog/*48.83*/.text)),format.raw/*48.88*/("""</blockquote>
 	</div>
-	""")))})),format.raw/*44.3*/("""
+	""")))})),format.raw/*50.3*/("""
 	</div>
 	<div class="col-lg-4">
 	</div>
 </div>
-""")))})),format.raw/*49.2*/("""
+""")))})),format.raw/*55.2*/("""
 
 """))}
     }
@@ -88,11 +94,11 @@ Seq[Any](format.raw/*1.83*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jul 12 00:11:39 IST 2014
+                    DATE: Tue Jul 15 22:18:19 IST 2014
                     SOURCE: /home/dhiresh/blog/app/views/index.scala.html
-                    HASH: b9785dda0db66c4ca4af822c8957edbc1f435764
-                    MATRIX: 825->1|1016->82|1045->102|1081->104|1102->117|1141->119|1307->250|1321->256|1360->274|1712->591|1750->620|1790->622|1892->688|1906->693|1943->708|1985->719|2306->1005|2340->1023|2380->1025|2469->1078|2482->1082|2511->1089|2584->1126|2597->1130|2624->1135|2670->1145|2683->1149|2712->1156|2832->1240|2845->1244|2872->1249|2927->1273|3007->1322
-                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|37->9|37->9|37->9|48->20|48->20|48->20|50->22|50->22|50->22|52->24|66->38|66->38|66->38|68->40|68->40|68->40|69->41|69->41|69->41|69->41|69->41|69->41|70->42|70->42|70->42|72->44|77->49
+                    HASH: 1daa9e139e8addc5b43051cbdc83a5dede214da7
+                    MATRIX: 825->1|1016->82|1045->102|1081->104|1102->117|1141->119|1291->233|1306->239|1347->258|1579->454|1594->460|1634->478|1992->801|2030->830|2070->832|2172->898|2186->903|2223->918|2265->929|2586->1215|2620->1233|2660->1235|2749->1288|2762->1292|2791->1299|2864->1336|2877->1340|2904->1345|2950->1355|2963->1359|2992->1366|3112->1450|3125->1454|3152->1459|3207->1483|3287->1532
+                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|38->10|38->10|38->10|43->15|43->15|43->15|54->26|54->26|54->26|56->28|56->28|56->28|58->30|72->44|72->44|72->44|74->46|74->46|74->46|75->47|75->47|75->47|75->47|75->47|75->47|76->48|76->48|76->48|78->50|83->55
                     -- GENERATED --
                 */
             

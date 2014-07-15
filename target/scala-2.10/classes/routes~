@@ -7,6 +7,8 @@ GET     /                           controllers.Application.index()
 
 POST	/			    controllers.Application.check()
 
+POST	/			    controllers.Application.loggedIn()
+
 #Blog page
 
 GET	/admin			    controllers.Application.loggedIn()
@@ -21,3 +23,5 @@ POST	/add			    controllers.Application.adding()
 GET	/logOut			    controllers.Application.logOut()
 
 GET     /signup                     controllers.Application.signup()
+
+POST    /signup                     controllers.Application.authenticate()

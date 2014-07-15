@@ -26,9 +26,24 @@ public class Users extends Model {
 		List<Users> users = new ArrayList<Users>();
 		users = Ebean.find(Users.class)
 				.findList(); 
+	
 		return users; 
 	}
+	
+	public static boolean duplicate(String user)
+	{
+		Users user2 = Ebean.find(Users.class).where().eq("username",user).findUnique();		
 		
+		try{		
+			System.out.println(user2.username);
+			return true;
+		}
+		catch(Exception e){
+			return false;
+		}
+	
+	}
+			
 	public static void deleter()
 	{
 		List<Users> users = new ArrayList<Users>();
